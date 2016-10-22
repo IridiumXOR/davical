@@ -18,7 +18,15 @@ On TCP 80 is listening apache server with davical on hostname davical.example (s
 TIME_ZONE is set by default to "Europe/Rome" but you can set as you prefer according to tzdata (for example to "Europe/Paris" or "Europe/London")
 
 /config can be mount and must contains a personalized version of all configuration files necessary:
-apache.conf, davical.php, rsyslog.conf,supervisord.conf
+
+->apache.conf
+
+->davical.php 
+
+->rsyslog.conf
+
+->supervisord.conf
+
 So you can download the configuration files present in this repository, alter and copy them into /config
 and mount it, the container using it!
 
