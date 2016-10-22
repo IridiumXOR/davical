@@ -1,5 +1,6 @@
 # davical
 Docker file for a complete davical server (davical + apache + postgresql) on Alpine Linux
+
 This simple repository contains a Dockerfile (and other configuration files) necessary to create an Alpine Linux image contains Davical + Apache + Postgresql server
 
 Davical is downloaded directly from its git repository while apache and postgres are installed from alpine linux repository.
