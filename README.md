@@ -35,4 +35,4 @@ It is possible to restore the database using a backup: put the backup into the m
 The rsyslog server is configured to collect all logs from apache and postgres into /var/log/messages but you can personalize the configuration
 altering rsyslog.conf and put it in /config. rsyslog do NOT collect apache access.log (it is disabled)
 
-The init system used is supervisord with some fixes necessary due to a bug...
+The init system used is supervisord with some fixes necessary due to a bug: it is necessary 30 seconds to the database to be correctly initialized, so please wait before try to access to apache!
