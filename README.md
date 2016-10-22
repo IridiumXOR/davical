@@ -5,9 +5,13 @@ This simple repository contains a Dockerfile (and other configuration files) nec
 
 Davical is downloaded directly from its git repository while apache and postgres are installed from alpine linux repository.
 
+
 -> Exposed Ports: TCP 80
+
 -> Exposed Volumes: /config, /var/lib/postgresql/data/
+
 -> Exposed Variables: TIME_ZONE
+
 
 On TCP 80 is listening apache server with davical on hostname davical.example (set your local host file to point davical.example to 127.0.0.1)
 
