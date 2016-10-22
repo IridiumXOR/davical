@@ -15,7 +15,7 @@ Davical is downloaded directly from its git repository while apache and postgres
 
 On TCP 80 is listening apache server with davical on hostname davical.example (set your local host file to point davical.example to 127.0.0.1)
 
-TIME_ZONE is set by default to "Europe/Rome" but you can set as you prefer according to tzdata (for example to "Europe/Paris or "Europe/London")
+TIME_ZONE is set by default to "Europe/Rome" but you can set as you prefer according to tzdata (for example to "Europe/Paris" or "Europe/London")
 
 /config can be mount and must contains a personalized version of all configuration files necessary:
 apache.conf, davical.php, rsyslog.conf,supervisord.conf
