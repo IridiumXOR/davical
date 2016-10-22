@@ -36,3 +36,5 @@ The rsyslog server is configured to collect all logs from apache and postgres in
 altering rsyslog.conf and put it in /config. rsyslog do NOT collect apache access.log (it is disabled)
 
 The init system used is supervisord with some fixes necessary due to a bug: it is necessary 30 seconds to the database to be correctly initialized, so please wait before try to access to apache!
+
+The default admin user is: admin with password: 12345 (you can alter it from the davical gui)
