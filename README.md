@@ -27,11 +27,10 @@ TIME_ZONE is set by default to "Europe/Rome" but you can set as you prefer accor
 
 ->supervisord.conf
 
-So you can download the configuration files present in this repository, alter and copy them into /config
-and mount it, the container using it!
+So you can download the configuration files present in this repository, alter and copy them into a directory to be mounted on /config and the container using them!
 
 /var/lib/postgresql/data contains the database and the directory backups/. In this directory crond every day saves (thanks to /sbin/backup_db) a dump of davical database to backups/davical_backup.tar
-It is possible to restore the database using a backup putting it in /config and run after the init /sbin/restore_db
+It is possible to restore the database using a backup: put the backup into the mounted /config, run the container and after the initialization use "docker exec container_name /sbin/restore_db"
 
 The rsyslog server is configured to collect all logs from apache and postgres into /var/log/messages but you can personalize the configuration
 altering rsyslog.conf and put it in /config. rsyslog do NOT collect apache access.log (it is disabled)
