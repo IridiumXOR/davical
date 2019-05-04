@@ -4,7 +4,7 @@
 *            These apply everywhere and will need setting                  *
 *                                                                          *
 ***************************************************************************/
-$c->domain_name = 'davical.example';
+$c->domain_name = getenv('HOST_NAME')?:'davical.example';
 $c->sysabbr = 'davical';
 
 /****************************
@@ -457,10 +457,10 @@ $c->default_locale = "it_IT";
 * Note that there is currently no way of enabling metrics via memcache
 * without memcache being enabled for all of DAViCal.
 */
-//  $c->metrics_style = 'counters';               // Just the simple counter-based metrics
+$c->metrics_style = 'counters';               // Just the simple counter-based metrics
 //  $c->metrics_style = 'memcache';               // Only the metrics using memcache
 //  $c->metrics_style = 'both';                   // Both styles of metrics
 //  $c->metrics_collectors = array('127.0.0.1');  // Restrict access to only this IP address
-//  $c->metrics_require_user = 'metricsuser';     // Restrict access to only connections authenticating as this user
+$c->metrics_require_user = 'admin';     // Restrict access to only connections authenticating as this user
 
 
