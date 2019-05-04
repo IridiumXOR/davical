@@ -39,3 +39,6 @@ docker run -d --name davical -p 8080:80 -p 8443:443 -v /var/davical/config:/conf
 Creates and runs a davical Docker container which will be accessible on the host system on TCP ports 8080 and 8443 (HTTPS).
 The config files must be created in /var/davical/config and the database file will be placed in /var/davical/data.
 The time zone is set to Europe/berlin and the hostname is my.example.com.
+
+### Credits
+Based on https://github.com/IridiumXOR/davical and https://hub.docker.com/r/oliveria/davical (no HTTPS, older PG and PHP versions).
