@@ -48,19 +48,19 @@ The **default admin user** is: *admin* with password: *12345* (you can alter it 
 
 **Simple test**
 ```
-docker run -d --name davical-test -p 8080:80 datze/davical_https
+docker run -d --name davical-test -p 8080:80 oliveria/davical
 ```
 Creates and runs a DAViCal Docker container which is fully operable on host TCP port 8080. Does not require any further configuration. *Attention! Only for testing! When the container is deleted, all stored calendars are lost!*
 
 **Simple HTTP mode**
 ```
-docker run -d --name davical -p 8080:80 -v var/davical/data:/var/lib/postgresql/data datze/davical_https
+docker run -d --name davical -p 8080:80 -v var/davical/data:/var/lib/postgresql/data oliveria/davical
 ```
 Creates and runs a DAViCal Docker container with default configurations on host TCP port 8080. The **database files are stored in /var/davical/data**. This is the simplest set-up without loosing calendars when the container is deleted.
 
 **Full example**
 ```
-docker run -d --name davical -p 8080:80 -p 8443:443 -v /var/davical/config:/config -v /var/davical/data:/var/lib/postgresql/data -e HOST_NAME='my.example.com' -e TIME_ZONE='Europe/Berlin' datze/davical_https
+docker run -d --name davical -p 8080:80 -p 8443:443 -v /var/davical/config:/config -v /var/davical/data:/var/lib/postgresql/data -e HOST_NAME='my.example.com' -e TIME_ZONE='Europe/Berlin' oliveria/davical
 ```
 Creates and runs a DAViCal Docker container which will be accessible on the host system on TCP ports 8080 and 8443 (HTTPS).
 The time zone is set to Europe/Berlin and the hostname is my.example.com.
@@ -68,6 +68,3 @@ The time zone is set to Europe/Berlin and the hostname is my.example.com.
 The **config files must be created in /var/davical/config** and the **database files are stored in /var/davical/data**.
 
 A SSL certificate must be placed in /var/davical/config and referenced in /var/davical/config/apache.conf. (Create a self-signed certificate with something like `openssl req -x509 -newkey rsa:4096 -keyout /var/davical/config/ssl/private.pem -out /var/davical/config/ssl/cert.pem -days 1000`)
-
-### Credits
-Based on https://github.com/IridiumXOR/davical and https://hub.docker.com/r/oliveria/davical (no HTTPS, older PG and PHP versions).
