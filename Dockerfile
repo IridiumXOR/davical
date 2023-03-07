@@ -4,10 +4,11 @@
 #Default configuration: hostname: davical.example
 #			user: admin			
 #			pass: 12345
+# Contribution from: https://github.com/datze
 #---------------------------------------------------------------------
 
 FROM 	alpine
-MAINTAINER https://github.com/datze 
+MAINTAINER Andrea Oliveri
 
 ENV	TIME_ZONE "Europe/Rome"
 ENV	HOST_NAME "davical.example"
